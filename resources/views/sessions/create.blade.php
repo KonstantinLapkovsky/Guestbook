@@ -2,7 +2,7 @@
 
 	@section ('content')
 
-	<div class="register-login">
+	<div class="guest-form">
 
 		<div class="col-md-12" id="login">
 			

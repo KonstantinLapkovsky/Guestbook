@@ -15,7 +15,9 @@
     <link href="/css/guestbook.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/register-login.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/register-login.js"></script>
+    <script src="/js/message-validation.js"></script>
   </head>
 
   <body>

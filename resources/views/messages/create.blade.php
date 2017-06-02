@@ -2,11 +2,13 @@
 
 @section ('content')
 
-	<div class="col-sm-12" id="register">
-		
-		<h1>Register</h1>
+<div class="guest-form">
 
-		<form method="POST" action="/messages">
+	<div class="col-sm-12">
+		
+		<h1>Send message</h1>
+
+		<form method="POST" action="/messages/create" id="message-create-form">
 
 			{{ csrf_field() }}
 			
@@ -14,7 +16,7 @@
 				
 				<label for="name">Name:</label>
 
-				<input type="text" class="form-control" id="name" name="name" required>
+				<input type="text" class="form-control" id="name" name="name">
 
 			</div>
 
@@ -22,37 +24,37 @@
 				
 				<label for="email">Email:</label>
 
-				<input type="email" class="form-control" id="email" name="email" required>
+				<input type="email" class="form-control" id="email" name="email" class="required email">
 
 			</div>
 
 			<div class="form-group">
 				
-				<label for="password">Password:</label>
+				<label for="message">Message text:</label>
 
-				<input type="password" class="form-control" id="password" name="password" required>
-
-			</div>
-
-			<div class="form-group">
-				
-				<label for="text">Message text:</label>
-
-				<input type="textarea" class="form-control" id="text" name="email" required>
+				<textarea class="form-control" id="message" name="message"></textarea>
 
 			</div>
 
 			<div class="form-group">
 				
-				<label for="password_confirmation">Password confirmation:</label>
+				<label for="captcha">Captcha:</label>
 
-				<input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required>
+				<span id="captcha">{{ $captcha }}</span>
 
 			</div>
 
 			<div class="form-group">
 				
-				<div class="btn btn-primary">Send message</div>
+				<label for="captcha_confirmation">Captcha:</label>
+
+				<input type="text" class="form-control" id="captcha_confirmation" name="captcha_confirmation">
+
+			</div>
+
+			<div class="form-group">
+				
+				<button type="submit" class="btn btn-primary">Send message</button>
 
 			</div> 
 
@@ -61,5 +63,7 @@
 		</form>
 
 	</div>
+
+</div>
 
 @endsection

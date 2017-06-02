@@ -10,7 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/userpage', 'MessageController@index');
+Route::get('/userpage', 'MessageController@create');
+Route::post('/messages/create', 'MessageController@store');
 
 Route::post('/register', 'RegisterController@store');
 Route::get('/', 'RegisterController@create');

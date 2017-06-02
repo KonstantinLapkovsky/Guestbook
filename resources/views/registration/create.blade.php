@@ -1,4 +1,4 @@
-	<div class="col-sm-12" id="register">
+	<div class="col-sm-12 register-login">
 		
 		<h1>Register</h1>
 

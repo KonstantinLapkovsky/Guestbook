@@ -1,8 +1,22 @@
 $(document).ready(function() {
-	var captcha = $('#captcha').text();
-	console.log(captcha);
-	$('#message-create-form').submit(function(e){
-	
+	var captcha = function () {
+		var code = '';
+		var chars = 'qazxswedcvfrtgbnhyujmkiolp1234567890QAZXSWEDCVFRTGBNHYUJMKIOLP';
+		var max = 7;
+		var min = 4;
+		var digits = Math.round(Math.random() * (max - min + 1)) + min;;
+		var size = chars.length - 1;
+			// Generate random code.
+		while (digits--) {
+			var symbol = Math.floor(Math.random() * (size + 1))
+			code += chars[symbol];
+		}
+		return code;
+	};
+	$('#captcha').val(captcha);
+	$('.captcha').text($('#captcha').val());
+	//var captchach = $('#captcha').val(captcha);
+	//console.log(captchach);
 	$('#message-create-form').validate({
 		rules: {
 			name: 'required',
@@ -16,7 +30,7 @@ $(document).ready(function() {
 			},
 			captcha_confirmation: {
 				required: true,
-				equalTo: captcha,
+				equalTo: '#captcha',
 			}
 		},
 		messages: {
@@ -36,15 +50,17 @@ $(document).ready(function() {
 			}
 		},
 		submitHandler: function(form) {
-        	$.ajax({
-            	url: '/messages/create',
-            	type: 'POST',
-            	data: $('#message-create-form').serialize(),
-            	success: function(response) {
-                	$('#answers').html(response);
-            }            
-        });
-    	}
-	})
-});
+	       	$.ajax({
+	           	url: '/messages/create',
+	           	type: 'POST',
+	           	data: $(form).serialize(),
+	           	success: function(response) {
+	               	alert('Message done');
+	               	$(form)[0].reset();
+	               	$('#captcha').val(captcha);
+	               	$('.captcha').text($('#captcha').val());
+	        }            
+	    })
+	  	}
+	});
 });

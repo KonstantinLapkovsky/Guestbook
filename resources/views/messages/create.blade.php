@@ -24,7 +24,7 @@
 				
 				<label for="email">Email:</label>
 
-				<input type="email" class="form-control" id="email" name="email" class="required email">
+				<input type="email" class="form-control" id="email" name="email">
 
 			</div>
 
@@ -40,7 +40,7 @@
 				
 				<label for="captcha">Captcha:</label>
 
-				<span id="captcha">{{ $captcha }}</span>
+				<input type="hidden" class="form-control" id="captcha"><span class="captcha"></span>
 
 			</div>
 

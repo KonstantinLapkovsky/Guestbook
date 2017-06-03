@@ -18,6 +18,7 @@
     <script src="/js/jquery.validate.min.js"></script>
     <script src="/js/register-login.js"></script>
     <script src="/js/message-validation.js"></script>
+    <script src="/js/captcha.js"></script>
   </head>
 
   <body>

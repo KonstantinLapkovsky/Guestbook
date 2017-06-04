@@ -19,7 +19,7 @@ class MessageController extends Controller
         $dir = $request->get('dir') ? $request->get('dir') : 'asc';
         $messages = Message::orderBy($order, $dir)->paginate(10);
         if ($request->ajax()) {
-            return response()->json(view('messages.message', compact('messages'))->render());
+            return response()->json(view('messages.messages', compact('messages'))->render());
         };
         return view('messages.index', compact('messages'));
     }

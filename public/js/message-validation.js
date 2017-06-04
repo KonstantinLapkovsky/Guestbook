@@ -55,7 +55,7 @@ $(document).ready(function() {
 	           	type: 'POST',
 	           	data: $(form).serialize(),
 	           	success: function(response) {
-	               	alert('Message done');
+	               	$('#success-message').show('fast').delay(3000).hide('fast');
 	               	$(form)[0].reset();
 	               	$('#captcha').val(captcha);
 	               	$('.captcha').text($('#captcha').val());

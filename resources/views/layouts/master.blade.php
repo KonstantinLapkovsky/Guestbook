@@ -13,12 +13,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <!-- Custom styles for this template -->
     <link href="/css/guestbook.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="">
+    <link rel="stylesheet" href="/css/app.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="/js/jquery.validate.min.js"></script>
     <script src="/js/register-login.js"></script>
     <script src="/js/message-validation.js"></script>
-    <script src="/js/captcha.js"></script>
+    <script src="/js/ajax-pagination.js"></script>
   </head>
 
   <body>

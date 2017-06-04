@@ -3,6 +3,8 @@
 @section ('content')
 
 <div class="guest-form">
+<div id="success-message" class="alert-success" style="display: none;"> Thank you for your feedback!
+</div>
 
 	<div class="col-sm-12">
 		

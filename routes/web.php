@@ -12,6 +12,7 @@
 */
 Route::get('/userpage', 'MessageController@create');
 Route::post('/messages/create', 'MessageController@store');
+Route::get('/messages', 'MessageController@index');
 
 Route::post('/register', 'RegisterController@store');
 Route::get('/', 'RegisterController@create');

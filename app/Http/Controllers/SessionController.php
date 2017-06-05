@@ -18,8 +18,9 @@ class SessionController extends Controller
 
     public function destroy()
     {
-    	auth()->logout();
-
+        if (! auth()->guard('admin')->check()) {
+    	   auth()->logout();
+        }
     	return redirect('/');
     }
 

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RegistrationForm;
 
-class RegisterController extends Controller
+class UserRegisterController extends Controller
 {
 	public function __construct()
 	{
@@ -16,7 +16,7 @@ class RegisterController extends Controller
     	return view('sessions.create');
     }
 
-    public function store(RegistrationForm $form)
+    public function store(UserRegistrationForm $form)
     {
     	$form->persist();
     	session()->flash('message', 'Thanks so much for signing up!');

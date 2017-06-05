@@ -10,7 +10,8 @@ class MessageController extends Controller
 {
 	public function __construct(Message $messages)
 	{
-		$this->middleware('auth');
+		$this->middleware('auth:admin')->only('index');
+        $this->middleware('auth');
 	}
 
     public function index(Request $request)

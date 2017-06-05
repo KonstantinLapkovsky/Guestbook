@@ -2,10 +2,10 @@
 
 namespace App\Http\Requests;
 
-use App\User;
+use App\Admin;
 use Illuminate\Foundation\Http\FormRequest;
 
-class RegistrationForm extends FormRequest
+class AdminRegistrationForm extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -33,12 +33,11 @@ class RegistrationForm extends FormRequest
 
     public function persist()
     {
-        $user = User::create([
+        $admin = Admin::create([
             'name' => request('name'), 
             'email' => request('email'), 
-            'password' => bcrypt(request('password')
-        )]);
-
-        auth()->login($user);
+            'password' => bcrypt(request('password'))
+        ]);
+            auth()->guard('admin')->login($admin);
     }
 }

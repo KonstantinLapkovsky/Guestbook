@@ -15,12 +15,19 @@ Route::post('/messages/create', 'MessageController@store');
 Route::get('/messages', 'MessageController@index');
 
 Route::post('/register', 'RegisterController@store');
-Route::get('/', 'RegisterController@create');
+//Route::get('/', 'RegisterController@create');
 
-Route::get('/', 'SessionController@create');
+Route::get('/', 'SessionController@create')->name('home');
 Route::post('/login', 'SessionController@store');
 Route::get('/logout', 'SessionController@destroy');
 
+Route::prefix('admin')->group(function() {
+	Route::get('/', 'Auth\AdminLoginController@showLoginForm');
+	Route::post('/login', 'Auth\AdminLoginController@login');
+	Route::get('/', 'AdminRegisterController@create');
+	Route::post('/register', 'AdminRegisterController@store');
+	Route::get('/logout', 'Auth\AdminLoginController@logout');
+	Route::get('/messages', 'MessageController@index');
+});
 
-//Route::post('/login', 'SessionController@store');
-//Route::get('/', 'SessionController@create');
+

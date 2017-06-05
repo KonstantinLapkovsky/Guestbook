@@ -13,7 +13,7 @@
 	@foreach ($messages as $message)
 		
 			<tr>
-				<td><a href="#">{{ $message->name }}</a></td>
+				<td><a href="/admin/messages/{{ $message->id }}">{{ $message->name }}</a></td>
 				<td>{{ $message->email }}</td>
 				<td>{{ $message->created_at }}</td>
 			</tr>

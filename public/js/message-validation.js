@@ -15,8 +15,6 @@ $(document).ready(function() {
 	};
 	$('#captcha').val(captcha);
 	$('.captcha').text($('#captcha').val());
-	//var captchach = $('#captcha').val(captcha);
-	//console.log(captchach);
 	$('#message-create-form').validate({
 		rules: {
 			name: 'required',
@@ -59,8 +57,8 @@ $(document).ready(function() {
 	               	$(form)[0].reset();
 	               	$('#captcha').val(captcha);
 	               	$('.captcha').text($('#captcha').val());
-	        }            
-	    })
+	        	}            
+	    	})
 	  	}
 	});
 });

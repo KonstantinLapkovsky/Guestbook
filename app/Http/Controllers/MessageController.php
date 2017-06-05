@@ -10,7 +10,7 @@ class MessageController extends Controller
 {
 	public function __construct(Message $messages)
 	{
-		$this->middleware('auth:admin')->only('index');
+		$this->middleware('auth:admin')->only(['index','show']);
         $this->middleware('auth');
 	}
 
@@ -28,6 +28,11 @@ class MessageController extends Controller
     public function create()
     {
     	return view('messages.create');
+    }
+
+    public function show(Message $message)
+    {
+        return view('messages.show', compact('message'));
     }
 
     public function store()

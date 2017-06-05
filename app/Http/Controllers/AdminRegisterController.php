@@ -19,7 +19,6 @@ class AdminRegisterController extends Controller
     public function store(AdminRegistrationForm $form)
     {
     	$form->persist();
-    	session()->flash('message', 'Thanks so much for signing up!');
     	return redirect('/admin/messages');
     }
 }

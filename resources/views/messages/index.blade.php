@@ -4,24 +4,43 @@
 
 @if (count($messages) > 0)
 
-<div class="col-sm-8 blog-main"  id="messages">
+<div class="col-sm-12 blog-main"  id="messages">
+	<div class="col-md-5 mb-4">
+		<span class="mr-3">
+			Sort by: 
+		</span>
+		<span class="mr-2">
+			<a href="/messages?order=name&dir=asc">Name </a>
+		</span>
+		<span class="mr-2">
+			<a href="/messages?order=email&dir=asc">Email </a>
+		</span>
+		<span class="mr-2">
+			<a href="/messages?order=created_at&dir=asc">Created time</a>
+		</span>
+	</div>
     <table class="table table-bordered table-striped">
 		<tr>
 			<th>
-				<a href="/messages?order=name&dir=asc">Name</a>
+				Name
 			</th>
 			<th>
-				<a href="/messages?order=email&dir=asc">Email</a>
-			</th>
-			<th>
-				<a href="/messages?order=created_at&dir=asc">Date</a>
+				Message
 			</th>
 		</tr>
 		@foreach ($messages as $message)
 			<tr>
-				<td><a href="/admin/messages/{{ $message->id }}">{{ $message->name }}</a></td>
-				<td>{{ $message->email }}</td>
-				<td>{{ $message->created_at }}</td>
+				<td>{{ $message->name }}
+				  	<p class="blog-post-meta">
+				    	{{ $message->created_at->toFormattedDateString() }}
+				    </p>
+					<p class="blog-post-meta">
+				  		{{ $message->email }}
+				  	</p>
+			    </td>
+			    <td>
+			    	{{ $message->message }}
+			    </td>
 			</tr>
 		@endforeach
 	</table>	

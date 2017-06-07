@@ -15,7 +15,7 @@ $(function() {
         });
     });
 
-    $('body').on('click', 'th a', function(e) {
+    $('body').on('click', 'span a', function(e) {
         e.preventDefault();
         var dir = $(this).attr('href').split('dir=')[1];
         var order = $(this).attr('href').slice(16,-8);
@@ -27,4 +27,4 @@ $(function() {
             }
         })
     })
-})
+});

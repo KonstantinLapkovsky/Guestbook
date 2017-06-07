@@ -28,6 +28,5 @@ $factory->define(App\Message::class, function (Faker\Generator $faker) {
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'message' => $faker->paragraph(14),
-      	'user_id' => $faker->randomDigit(5)
     ];
 });

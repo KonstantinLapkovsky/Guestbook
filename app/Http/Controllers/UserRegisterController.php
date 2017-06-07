@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\RegistrationForm;
+use App\Http\Requests\UserRegistrationForm;
 
 class UserRegisterController extends Controller
 {

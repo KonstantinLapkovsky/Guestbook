@@ -37,9 +37,11 @@ class MessageController extends Controller
 
     public function store()
     {
-        auth()->user()->publish(
-            new Message(request(['name', 'email', 'message']))
-        );   	
+        Message::create([
+            'name' => request('name'),
+            'email' => request('email'),
+            'message' => request('message')
+        ]);
     	return redirect('/userpage');
     }
 }
